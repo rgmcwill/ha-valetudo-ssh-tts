@@ -1,4 +1,4 @@
-import sys, logging, json, ipaddress, pathlib
+import sys, logging, json, ipaddress, pathlib, configparser
 import urllib.parse
 import urllib.request
 import paramiko.client
@@ -29,16 +29,19 @@ def is_valid_file_path(file_path):
     except Exception:
         return False
 
+config = configparser.ConfigParser()
+config.read('config.ini')
+
 # args (home assistant url, home assistant token, robo vacuum ip, robo vacuum ssh key file path)
-if (len(sys.argv) < 6):
-    logging.error("Wrong number of params. Got {} but wanted 5".format((len(sys.argv)-1)))
+if (len(sys.argv) < 3):
+    logging.error("Wrong number of params. Got {} but wanted 2".format((len(sys.argv)-1)))
     exit()
 
-MESSAGE = sys.argv[1]
-HOMEASSISTANT_BASE_URL = sys.argv[2]
-BEARER_TOKEN = sys.argv[3]
-ROBO_VACCUM_IP = sys.argv[4]
-ROBO_VACCUM_SSH_KEY_PATH = sys.argv[5]
+MESSAGE = sys.argv[2]
+HOMEASSISTANT_BASE_URL = config.get('Settings', 'homeassistant_url')
+BEARER_TOKEN = sys.argv[1]
+ROBO_VACCUM_IP = config.get('Settings', 'robot_ip')
+ROBO_VACCUM_SSH_KEY_PATH = config.get('Settings', 'robot_ssh_key_path')
 
 # no need to check 1st arg
 # check 2nd arg

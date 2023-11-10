@@ -10,11 +10,12 @@ This is a basic python script that makes a request to a home assistant server to
     * I setup [Valetudo](https://valetudo.cloud/) on my robot vacuum which provided ssh access.
 
 ### To Run:
-1. Run `pip install -r requirements.txt` to install the required dependencies.
-2. Run the script with the following syntax
-    * `python robo_vacuum_tts.py <message> <homeassistant_url> <homeassistant_token> <robot_vacuum_ip> <robot_vacuum_ssh_key_path>`
+1. Edit the `config.ini` and fill in with your values.
+2. Run `pip install -r requirements.txt` to install the required dependencies.
+3. Run the script with the following syntax:
+    * `python robo_vacuum_tts.py <homeassistant_token> <<message>`
 
 ### Example:
 ```shell
-python robo_vacuum_tts.py "A Message" http://homeassistant.local:8123 "eyabcdefghijklmnopqrstuvwxyz13456789.eyabcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789.abcdefghijklmnopqrstuvwxyz13456789" 192.168.1.111 "C:\Users\a_user\files\key.id_rsa"
+python robo_vacuum_tts.py "eyabcdefghijklmnopqrstuvwxyz13456789.eyabcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789.abcdefghijklmnopqrstuvwxyz13456789" "A Message"
 ```

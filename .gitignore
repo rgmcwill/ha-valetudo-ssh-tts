@@ -1,0 +1,8 @@
+*.zip
+*.tar
+*.gz
+*.id_rsa
+*.ppk
+*.sh
+*.bat
+*.wav

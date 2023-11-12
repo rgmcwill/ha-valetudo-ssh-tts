@@ -12,10 +12,14 @@ This is a basic python script that makes a request to a home assistant server to
 ### To Run:
 1. Edit the `config.ini` and fill in with your values.
 2. Run `pip install -r requirements.txt` to install the required dependencies.
-3. Run the script with the following syntax:
-    * `python robo_vacuum_tts.py <homeassistant_token> <<message>`
+3. Run with `--help` arg for usage:
+    * `python robo_vacuum_tts.py --help`
 
-### Example:
+### Examples:
 ```shell
-python robo_vacuum_tts.py "eyabcdefghijklmnopqrstuvwxyz13456789.eyabcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789.abcdefghijklmnopqrstuvwxyz13456789" "A Message"
+python robo_vacuum_tts.py --token "eyabcdefghijklmnopqrstuvwxyz13456789.eyabcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789abcdefghijklmnopqrstuvwxyz13456789.abcdefghijklmnopqrstuvwxyz13456789" --message"A Message"
+```
+
+```shell
+python robo_vacuum_tts.py -i
 ```
